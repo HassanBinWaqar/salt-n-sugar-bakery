@@ -297,6 +297,81 @@ The admin dashboard provides comprehensive business analytics:
 - Customer growth tracking
 - 7-day revenue trends
 
+## 🚀 Deployment to Vercel
+
+### Prerequisites for Production:
+1. **MongoDB Atlas Account** (Free tier available)
+2. **Vercel Account** (Free tier available)
+
+### Step 1: Set up MongoDB Atlas
+
+1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Create a free cluster (M0 Sandbox)
+3. Create a database user with username and password
+4. Whitelist all IPs: Go to **Network Access** → **Add IP Address** → **Allow Access from Anywhere** (`0.0.0.0/0`)
+5. Get your connection string from **Connect** → **Connect your application**
+   - It will look like: `mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/saltnsugar`
+
+### Step 2: Deploy to Vercel
+
+1. Push your code to GitHub (already done! ✅)
+2. Go to [Vercel](https://vercel.com) and sign in with GitHub
+3. Click **"Add New Project"**
+4. Import your repository: `HassanBinWaqar/salt-n-sugar-bakery`
+5. **Add Environment Variables** (Critical!):
+   ```
+   MONGODB_URI=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/saltnsugar
+   JWT_SECRET=generate-a-strong-random-secret-key-here
+   NEXT_PUBLIC_WHATSAPP_NUMBER=923335981875
+   ```
+   
+   **Generate a strong JWT_SECRET:**
+   ```bash
+   # Run this in your terminal to generate a random secret
+   node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+   ```
+
+6. Click **"Deploy"**
+7. Wait 2-3 minutes for deployment to complete
+
+### Step 3: Create Admin Account on Production
+
+After deployment, create the admin account:
+
+```bash
+# Option 1: Use Vercel CLI
+vercel env pull .env.production
+node scripts/createAdmin.js
+
+# Option 2: Update the script to use production MongoDB
+# Edit scripts/createAdmin.js and replace the MONGODB_URI
+```
+
+Or manually create admin in MongoDB Atlas:
+1. Open MongoDB Atlas → Collections
+2. Create collection `admins`
+3. Insert document:
+```json
+{
+  "username": "admin",
+  "password": "$2a$10$hashedPasswordHere",
+  "createdAt": "2025-11-22T00:00:00.000Z"
+}
+```
+
+### Step 4: Verify Deployment
+
+1. Visit your Vercel URL (e.g., `https://salt-n-sugar-bakery.vercel.app`)
+2. Test the homepage loads
+3. Go to `/admin/login` and sign in
+4. Upload products and hero photos
+
+### Important Notes:
+- ⚠️ Change admin password immediately after first login
+- ⚠️ Never commit `.env.local` to GitHub
+- ⚠️ Vercel automatically ignores `.env*.local` files
+- ✅ Environment variables are securely stored in Vercel dashboard
+
 ## 🎯 Future Enhancements
 
 - [ ] Online payment integration (Stripe/PayPal)
