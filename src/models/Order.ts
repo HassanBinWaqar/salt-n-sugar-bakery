@@ -100,7 +100,7 @@ const OrderSchema = new mongoose.Schema<IOrder>({
 });
 
 // Generate order number before saving
-OrderSchema.pre('save', async function(next) {
+OrderSchema.pre('save', async function() {
   if (this.isNew && !this.orderNumber) {
     const date = new Date();
     const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '');
@@ -112,7 +112,6 @@ OrderSchema.pre('save', async function(next) {
     });
     this.orderNumber = `SNS-${dateStr}-${(count + 1).toString().padStart(3, '0')}`;
   }
-  next();
 });
 
 export default mongoose.models.Order || mongoose.model<IOrder>('Order', OrderSchema);
