@@ -21,7 +21,7 @@ export default function DiscountBanner() {
               </h2>
               
               <p className="text-xl md:text-2xl mb-10 text-gray-800 max-w-3xl mx-auto font-medium leading-relaxed">
-                For first-time customers! Don't miss out on getting this amazing discount!
+                For first-time customers! Don&apos;t miss out on getting this amazing discount!
               </p>
 
               <button className="bg-gray-900 hover:bg-[#FF6B6B] text-white px-14 py-6 rounded-full font-bold text-xl transition-all transform hover:scale-110 hover:-translate-y-2 shadow-2xl hover:shadow-3xl">

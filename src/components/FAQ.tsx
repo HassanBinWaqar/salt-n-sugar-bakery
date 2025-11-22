@@ -34,7 +34,7 @@ export default function FAQ() {
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Have Questions? We're Here to Help!
+            Have Questions? We&apos;re Here to Help!
           </h2>
 
           {/* FAQ Items */}
@@ -80,7 +80,7 @@ export default function FAQ() {
           {/* Contact Info */}
           <div className="mt-8 text-center">
             <p className="text-gray-600 mb-4">
-              Can't find the answer you're looking for?
+              Can&apos;t find the answer you&apos;re looking for?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a

@@ -111,7 +111,7 @@ export default function WriteReviewPage() {
             Share Your <span className="text-coral">Experience</span>
           </h1>
           <p className="text-gray-600 text-lg">
-            We'd love to hear about your experience with Salt N Sugar!
+            We&apos;d love to hear about your experience with Salt N Sugar!
           </p>
         </div>
 

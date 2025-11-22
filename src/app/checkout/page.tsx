@@ -72,7 +72,7 @@ export default function CheckoutPage() {
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Order Successful! 🎉</h1>
           <p className="text-xl text-gray-600 mb-8">
-            Thank you for your order! We'll start preparing your delicious cakes right away.
+            Thank you for your order! We&apos;ll start preparing your delicious cakes right away.
           </p>
           <div className="bg-coral/10 rounded-2xl p-6 mb-8">
             <p className="text-gray-700">
@@ -169,7 +169,7 @@ export default function CheckoutPage() {
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Order via WhatsApp</h3>
                     <p className="text-sm text-gray-600">
-                      Click below to send your order directly to us on WhatsApp. We'll confirm your order, discuss delivery details, and payment options (Cash on Delivery available).
+                      Click below to send your order directly to us on WhatsApp. We&apos;ll confirm your order, discuss delivery details, and payment options (Cash on Delivery available).
                     </p>
                   </div>
                 </div>

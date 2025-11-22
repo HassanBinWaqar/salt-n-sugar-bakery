@@ -2279,7 +2279,7 @@ export default function AdminDashboard() {
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
                 >
-                  Today's Orders
+                  Today&apos;s Orders
                 </button>
                 <button
                   onClick={() => { setOrderFilter('pending'); fetchOrders('pending'); }}
