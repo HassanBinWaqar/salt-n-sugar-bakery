@@ -1,0 +1,6 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#FFB4C5"/>
+  <circle cx="200" cy="180" r="80" fill="#FF69B4" opacity="0.3"/>
+  <text x="200" y="200" font-family="Arial, sans-serif" font-size="80" text-anchor="middle">🕯️</text>
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="20" fill="#666" text-anchor="middle" font-weight="bold">Pink Candle Cake</text>
+</svg>
