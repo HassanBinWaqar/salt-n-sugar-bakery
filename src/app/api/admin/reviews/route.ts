@@ -58,7 +58,7 @@ export async function PUT(request: NextRequest) {
 
     const { id, approved } = await request.json();
 
-    if (!reviewId || typeof approved !== 'boolean') {
+    if (!id || typeof approved !== 'boolean') {
       return NextResponse.json(
         { error: 'Review ID and approved status are required' },
         { status: 400 }
@@ -66,7 +66,7 @@ export async function PUT(request: NextRequest) {
     }
 
     const review = await Review.findByIdAndUpdate(
-      reviewId,
+      id,
       { approved },
       { new: true }
     );
