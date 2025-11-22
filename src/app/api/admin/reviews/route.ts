@@ -99,7 +99,7 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    await connectDB();
+    await dbConnect();
 
     const { searchParams } = new URL(request.url);
     const reviewId = searchParams.get('id');
