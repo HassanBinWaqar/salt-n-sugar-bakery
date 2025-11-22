@@ -63,8 +63,8 @@ export async function GET(request: NextRequest) {
     // Calculate product popularity
     const productStats: { [key: string]: { name: string; quantity: number; revenue: number; orders: number } } = {};
     
-    orders.forEach(order => {
-      order.items.forEach(item => {
+    orders.forEach((order: any) => {
+      order.items.forEach((item: any) => {
         const key = item.productName;
         if (!productStats[key]) {
           productStats[key] = {
